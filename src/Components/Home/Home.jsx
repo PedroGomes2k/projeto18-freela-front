@@ -18,7 +18,7 @@ export default function Home() {
             }
         }
 
-        const url = axios.get(`${import.meta.env.VITE_API_URL}/home`, config)
+        const url = axios.get(`${process.env.REACT_APP_API_URL}/home`, config)
             .then((res) => {
 
                 setServices(res.data)

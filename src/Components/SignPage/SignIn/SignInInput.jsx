@@ -14,7 +14,7 @@ export default function SignInInput() {
 
         e.preventDefault()
 
-        axios.post(`${import.meta.env.VITE_API_URL}/`, form)
+        axios.post(`${process.env.REACT_APP_API_URL}/`, form)
 
             .then((res) => {
 
