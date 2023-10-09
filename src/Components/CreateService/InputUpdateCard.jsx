@@ -13,13 +13,13 @@ export default function UpdateService() {
     function newService(e) {
         e.preventDefault()
 
-         const config = {
-             headers: {
-                 Authorization: `Bearer ${token.token}`
-             }
-         }
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token.token}`
+            }
+        }
 
-        axios.put(`${import.meta.env.VITE_API_URL}/services/update-service`, form)
+        axios.put(`${import.meta.env.VITE_API_URL}/services/update-service`, config, form)
 
             .then(() => {
 

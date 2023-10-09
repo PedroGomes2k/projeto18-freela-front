@@ -20,7 +20,7 @@ export default function CreateService() {
             }
         }
 
-        axios.post(`${import.meta.env.VITE_API_URL}/services/new-service`, form)
+        axios.post(`${import.meta.env.VITE_API_URL}/services/new-service`, config, form)
 
             .then(() => {
 
