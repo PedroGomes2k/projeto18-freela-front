@@ -19,7 +19,7 @@ export default function UpdateService() {
             }
         }
 
-        axios.put(`${import.meta.env.VITE_API_URL}/services/update-service`, config, form)
+        axios.put(`${import.meta.env.VITE_API_URL}/services/update-service`, form, config)
 
             .then(() => {
 

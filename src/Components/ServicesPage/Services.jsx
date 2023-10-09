@@ -28,44 +28,40 @@ export default function Services() {
             }
         }
 
-        const url = axios.get(`${import.meta.env.VITE_API_URL}/services`, config)
+        axios.get(`${import.meta.env.VITE_API_URL}/services`, config)
             .then((res) => {
-
+                
                 setServices(res.data)
             })
             .catch((err) => console.log(err))
 
     }, [])
-    if (services === "") {
-        return (
-            <div>Carregando</div>
-        )
-    } else {
-        return (
-            <Container>
+    
+    return (
+        <Container>
 
-                <Menu />
+            <Menu />
 
-                <div className="plusButton"> <button onClick={() => clickNewService()}> Novo Serviço</button></div>
+            <div className="plusButton"> <button onClick={() => clickNewService()}> Novo Serviço</button></div>
 
-                {services && services.map((s) =>
+            {services && services.map((s) =>
 
-                    <CardsServices
-                        name={s.name}
-                        nameServices={s.nameServices}
-                        photo={s.photo}
-                        price={s.price}
-                        description={s.description}
-                        key={s.id}
-                        phone={s.phone}
-                        service={"service"}
-                    />
-                )}
+                <CardsServices
+                    name={s.name}
+                    nameServices={s.nameServices}
+                    photo={s.photo}
+                    price={s.price}
+                    description={s.description}
+                    key={s.id}
+                    phone={s.phone}
+                    service={"service"}
+                />
+            )}
 
 
-            </Container>
-        )
-    }
+        </Container>
+    )
+
 }
 
 const Container = styled.div`

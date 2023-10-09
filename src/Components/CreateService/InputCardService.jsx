@@ -19,8 +19,9 @@ export default function CreateService() {
                 Authorization: `Bearer ${token.token}`
             }
         }
-
-        axios.post(`${import.meta.env.VITE_API_URL}/services/new-service`, config, form)
+        console.log(token.token)
+        
+        axios.post(`${import.meta.env.VITE_API_URL}/services/new-service`, form, config)
 
             .then(() => {
 

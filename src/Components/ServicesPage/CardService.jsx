@@ -25,12 +25,7 @@ export default function CardsServices({ name, nameServices, photo, price, descri
                     <img src={photo} />
                     <div className="description">
                         <p> {description}</p> <br />
-                        <p> Preço do serviço: R$ {price}</p>
-                    </div>
-                    <br />
-                    <div className="namePrice">
-                        <p> {name}</p>
-                        <p> Contato: {phone}</p>
+                        <p> Preço do serviço: R$ {price},00</p>
                     </div>
                 </CardService>
             </Container>
@@ -45,13 +40,9 @@ export default function CardsServices({ name, nameServices, photo, price, descri
                         <img src={photo} />
                         <div className="description">
                             <p> {description}</p> <br />
-                            <p> Preço do serviço: R$ {price}</p>
+                            <p> Preço do serviço: R$ {price},00</p>
                         </div>
-                        <br />
-                        <div className="namePrice">
-                            <p> {name}</p>
-                            <p> Contato: {phone}</p>
-                        </div>
+
                     </CardService>
                     <div className="buttons">
                         <button onClick={() => editCard()} className="buttonGreen"> <IoIosAddCircleOutline /></button>

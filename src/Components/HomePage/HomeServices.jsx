@@ -11,13 +11,10 @@ export default function HomeServices({ name, nameServices, photo, price, descrip
                 <img src={photo} />
                 <div className="description">
                     <p> {description}</p> <br />
-                    <p> Preço do serviço: R$ {price}</p>
+                    <p> Preço do serviço: R$ {price},00</p>
                 </div>
                 <br />
-                <div className="namePrice">
-                    <p> {name}</p>
-                    <p> Contato: {phone}</p>
-                </div>
+               
             </CardService>
 
         </Container>
