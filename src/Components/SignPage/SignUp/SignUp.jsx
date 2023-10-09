@@ -1,11 +1,17 @@
 import styled from "styled-components"
 import SignInInput from "../SignIn/SignInInput"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import SignUpInput from "./SignUpInput"
 import samurai from "../../../assets/samurai.png"
 import katana from "../../../assets/katana.png"
 
 export default function SignUp() {
+
+    const navigate = useNavigate()
+
+    function principalPage() {
+        navigate("/")
+    }
 
     return (
         <ContainerCadastro>
@@ -15,7 +21,7 @@ export default function SignUp() {
                 <p>Get Samurai</p>
             </div>
 
-            <img src={samurai} alt="Imagem do Logo" />
+            <img src={samurai} alt="Imagem do Logo" onClick={principalPage} />
 
             <SignUpInput />
 

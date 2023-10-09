@@ -14,7 +14,7 @@ export default function SignUpInput() {
 
         if (form.password.length < 3) return alert("A sua senha tem que ter mais do que 3 characteres.")
 
-        axios.post(`${process.env.REACT_APP_API_URL}/cadastro`, form)
+        axios.post(`${import.meta.env.VITE_API_URL}/cadastro`, form)
 
             .then(() => {
 
