@@ -7,7 +7,7 @@ import { Context } from "../../Context/Context"
 
 export default function Menu() {
 
-    const {token} = useContext(Context)
+    const { token } = useContext(Context)
     const navigate = useNavigate()
 
     function principalPage(n) {
@@ -15,6 +15,10 @@ export default function Menu() {
         if (n === 2) return navigate("/services")
     }
 
+    function logOut() {
+        localStorage.removeItem(token)
+        navigate("/")
+    }
 
     return (
         <Container>
@@ -25,7 +29,7 @@ export default function Menu() {
             <div className="logout">
                 <h1>{token.name}</h1>
                 <p onClick={() => principalPage(2)}>Meus servicos</p>
-                <button onClick={() => console.log(1)}> Logout</button>
+                <button onClick={() => logOut()}> Logout</button>
             </div>
         </Container>
     )
