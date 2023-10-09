@@ -8,11 +8,12 @@ import { services } from "../mockitemns";
 
 export default function Home() {
 
+
     const { token } = useContext(Context)
+    const [services, setServices] = useState()
 
-    // const [services, setServices] = useState()
-
-    /*useEffect(() => {
+    
+    useEffect(() => {
 
         const config = {
             headers: {
@@ -20,14 +21,14 @@ export default function Home() {
             }
         }
 
-        const url = axios.get(`${process.env.REACT_APP_API_URL}/home`, config)
+        const url = axios.get(`${import.meta.env.VITE_API_URL}/home`, config)
             .then((res) => {
-
+                console.log(res.data)
                 setServices(res.data)
             })
             .catch((err) => console.log(err))
 
-    }, [])*/
+    }, [])
 
     return (
         <Container>
@@ -37,7 +38,7 @@ export default function Home() {
 
                 <HomeServices
                     name={s.name}
-                    nameServices={s.nameServices}
+                    nameServices={s.nameService}
                     photo={s.photo}
                     price={s.price}
                     description={s.description}

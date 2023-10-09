@@ -3,7 +3,6 @@ import Menu from "../MenuPage/Menu"
 import { useContext, useEffect, useState } from "react"
 import axios from "axios"
 import { Context } from "../../Context/Context"
-import { services } from "../mockitemns";
 import CardsServices from "./CardService"
 import { useNavigate } from "react-router-dom"
 
@@ -15,11 +14,11 @@ export default function Services() {
     const { token } = useContext(Context)
     const navigate = useNavigate()
 
-    function clickNewService(i){
-        
+    function clickNewService(i) {
+
         navigate(`/services/new-service`)
     }
-    /*const [services, setServices] = useState()
+    const [services, setServices] = useState()
 
     useEffect(() => {
 
@@ -29,38 +28,44 @@ export default function Services() {
             }
         }
 
-        const url = axios.get(`${process.env.VITE_API_URL}/services`, config)
+        const url = axios.get(`${import.meta.env.VITE_API_URL}/services`, config)
             .then((res) => {
 
                 setServices(res.data)
             })
             .catch((err) => console.log(err))
 
-    }, [])*/
-    return (
-        <Container>
+    }, [])
+    if (services === "") {
+        return (
+            <div>Carregando</div>
+        )
+    } else {
+        return (
+            <Container>
 
-            <Menu />
+                <Menu />
 
-            <div className="plusButton"> <button onClick={() => clickNewService()}> Novo Serviço</button></div>
+                <div className="plusButton"> <button onClick={() => clickNewService()}> Novo Serviço</button></div>
 
-            {services && services.map((s) =>
+                {services && services.map((s) =>
 
-                <CardsServices
-                    name={s.name}
-                    nameServices={s.nameServices}
-                    photo={s.photo}
-                    price={s.price}
-                    description={s.description}
-                    key={s.id}
-                    phone={s.phone}
-                    service={"service"}
-                />
-            )}
+                    <CardsServices
+                        name={s.name}
+                        nameServices={s.nameServices}
+                        photo={s.photo}
+                        price={s.price}
+                        description={s.description}
+                        key={s.id}
+                        phone={s.phone}
+                        service={"service"}
+                    />
+                )}
 
 
-        </Container>
-    )
+            </Container>
+        )
+    }
 }
 
 const Container = styled.div`

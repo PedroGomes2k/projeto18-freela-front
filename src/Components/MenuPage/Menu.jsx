@@ -2,9 +2,12 @@ import styled from "styled-components"
 import image from "../../assets/samurai.png"
 import { Link, useNavigate } from "react-router-dom"
 import { IoIosArrowDropdown } from "react-icons/io"
+import { useContext } from "react"
+import { Context } from "../../Context/Context"
 
 export default function Menu() {
 
+    const {token} = useContext(Context)
     const navigate = useNavigate()
 
     function principalPage(n) {
@@ -20,7 +23,7 @@ export default function Menu() {
 
 
             <div className="logout">
-                <h1>Nome do Usuario</h1>
+                <h1>{token.name}</h1>
                 <p onClick={() => principalPage(2)}>Meus servicos</p>
                 <button onClick={() => console.log(1)}> Logout</button>
             </div>

@@ -7,18 +7,18 @@ import { Context } from "../../Context/Context"
 export default function CreateService() {
 
     const [form, setForm] = useState({ nameService: "", photo: "", description: "", price: "" })
-    const {token} = useContext(Context)
+    const { token } = useContext(Context)
     const navigate = useNavigate()
-   
+
 
     function newService(e) {
         e.preventDefault()
 
-       /* const config = {
+        const config = {
             headers: {
                 Authorization: `Bearer ${token.token}`
             }
-        }*/
+        }
 
         axios.post(`${import.meta.env.VITE_API_URL}/services/new-service`, form)
 
