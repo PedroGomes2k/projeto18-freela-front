@@ -38,7 +38,6 @@ export default function SignInInput() {
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    autoComplete="email"
                     required
                 />
 

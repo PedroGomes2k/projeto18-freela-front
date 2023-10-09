@@ -12,7 +12,7 @@ export default function Home() {
     const { token } = useContext(Context)
     const [services, setServices] = useState()
 
-    
+
     useEffect(() => {
 
         const config = {
@@ -36,15 +36,13 @@ export default function Home() {
 
             {services && services.map((s) =>
 
-                <HomeServices
-                    name={s.name}
+                <HomeServices      
                     nameServices={s.nameService}
                     photo={s.photo}
                     price={s.price}
                     description={s.description}
                     key={s.id}
-                    phone={s.phone}
-                    service={"menu"}
+                    
                 />
             )}
 
